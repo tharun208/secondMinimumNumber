@@ -9,7 +9,7 @@ export default function getController(): Router {
     .get('/list', showSecondMinimum)
     .post('/calculate', findSecondMinimum);
 }
-function findSecondMinimumFromInput(input: Array<number>): number | String {
+export function findSecondMinimumFromInput(input: Array<number>): number | String {
   let min = Infinity,
     secondMin = Infinity;
   if (input.length < 2) {
