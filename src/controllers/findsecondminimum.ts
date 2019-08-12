@@ -49,7 +49,7 @@ async function findSecondMinimum(req: Request, res: Response) {
         res.status(200).json({ success: false, input, output });
       }
     } else {
-      res.status(200).json({ sucess: true, ...inputExists });
+      res.status(200).json({ success: true, ...inputExists });
     }
   } else {
     res.status(200).json({ success: false, message: 'Please Provide Input Details' });
