@@ -41,12 +41,12 @@ async function findSecondMinimum(req: Request, res: Response) {
     if (!inputExists) {
       const output = findSecondMinimumFromInput(input);
       if (typeof output === 'number') {
-        const userData: INumber = {
+        const userInput: INumber = {
           id: genId(6),
           input,
           output,
         };
-        await db.data.save(userData);
+        await db.data.save(userInput);
         res.status(200).json({ success: true, input, output });
       } else {
         logger.log('input.error', input);
