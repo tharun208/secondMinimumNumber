@@ -2,6 +2,9 @@ import express, { Request, Response, Router } from 'express';
 import db from '../models/db';
 import { genId } from '../utils/utils';
 import { INumber } from '../types';
+import Logger from '../utils/logger';
+
+const logger = new Logger('find-minimum');
 
 export default function getController(): Router {
   return express
@@ -46,9 +49,11 @@ async function findSecondMinimum(req: Request, res: Response) {
         await db.data.save(userData);
         res.status(200).json({ success: true, input, output });
       } else {
+        logger.log('input.error', input);
         res.status(200).json({ success: false, input, output });
       }
     } else {
+      logger.log('input.already.found', inputExists);
       res.status(200).json({ success: true, ...inputExists });
     }
   } else {
