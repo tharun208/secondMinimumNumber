@@ -19,7 +19,7 @@
     "@types/mongodb": "^3.1.14",
     "@types/nanoid": "^1.2.0",
     "babel-jest": "^24.8.0",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "jest": "^24.8.0",
     "mocha": "^6.2.0",
     "request": "^2.88.0",
